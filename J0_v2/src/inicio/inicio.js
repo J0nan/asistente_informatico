@@ -55,7 +55,7 @@ function cargar_apartados(ruta, intentado=0){
         console.error("Error "+e);
         if( intentado == 0){
             console.warn("Probando con ruta completa al archivo de contenido: "+URL_GITHUB_PAGES+"/res/contenido.txt");
-            cargar_apartados(URL_GITHUB_PAGES+'res/contenido.txt',1)
+            cargar_apartados(URL_GITHUB_PAGES+'/res/contenido.txt',1)
         }
     });
 }
