@@ -20,51 +20,42 @@ function cargar_apartados(ruta, intentado=0){
                     if (parametros!=undefined) {
                         //Hay parametros
                         var sURLVariables = parametros.split('&');
-
                         for(var i = 0; i<sURLVariables.length; i++){
-                            console.log(sURLVariables[i])
                             var sParameterName = sURLVariables[i].split('=');
                             if(sParameterName[1][0]=="{"){
-                                console.log(1)
                                 if (i==0) {
-                                    console.log("Esta ??")
                                     href_parametros = sParameterName[0];
                                 } else {
-                                    console.log("?????")
-                                    let nombre_variable = sParameterName[1].substr(1,sParameterName[1].indexOf('}'))
-                                    console.log("Me cago en todo")
-                                    href_parametros += eval(`${nombre_variable}`);
-                                    console.log("HOLA")
+                                    href_parametros += sParameterName[0];
                                 }
-                                console.log("!!!!!!!!!!!!")
                                 href_parametros += '=';
-                                href_parametros += sParameterName[1];
+                                href_parametros += eval(`${sParameterName[1].substr(1,sParameterName[1].indexOf('}')-1)}`);
                             } else {
-                                console.log(2)
                                 if(i==0){
                                     href_parametros = sURLVariables[i];
                                 } else {
                                     href_parametros += sURLVariables[i];
                                 }
                             }
+                            if (i+1<sURLVariables.length) {
+                                href_parametros += "&"
+                            }
                         }
-                        a.setAttribute('href',encodeURI(`./src/${nombre_html}?${parametros}`));
+                        console.warn
+                        a.setAttribute('href',encodeURI(`./src/${nombre_html}?${href_parametros}`));
                     } else {
-                        console.log("ESTA UNDEFINED")
                         a.setAttribute('href',encodeURI(`./src/${nombre_html}?titulo=${linea_separada[0]}`));
                     }
-                    console.log(parametros)
                 }
             }
             a.setAttribute('class',"list-group-item list-group-item-action");
             a.textContent = linea_separada[0]
             lista.appendChild(a)
-            // console.log(linea_separada[0])
         });
     })
     .catch(e => {
         console.error("Error "+e);
-        if( intentado == 0){
+        if(intentado == 0){
             console.warn("Probando con ruta completa al archivo de contenido: "+URL_GITHUB_PAGES+"/res/contenido.txt");
             cargar_apartados(URL_GITHUB_PAGES+'/res/contenido.txt',1)
         }
