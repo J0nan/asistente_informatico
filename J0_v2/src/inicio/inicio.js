@@ -44,6 +44,7 @@ function cargar_apartados(ruta, intentado=0){
                         }
                         a.setAttribute('href',encodeURI(`./src/${nombre_html}?${parametros}`));
                     } else {
+                        console.log("ESTA UNDEFINED")
                         a.setAttribute('href',encodeURI(`./src/${nombre_html}?titulo=${linea_separada[0]}`));
                     }
                     console.log(parametros)
