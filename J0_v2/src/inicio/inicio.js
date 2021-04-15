@@ -20,6 +20,7 @@ function cargar_apartados(ruta, intentado=0){
                     if (parametros!=undefined) {
                         //Hay parametros
                         var sURLVariables = parametros.split('&');
+                        console.log(1);
                         for(var i = 0; i<sURLVariables.length; i++){
                             var sParameterName = sURLVariables[i].split('=');
                             if(sParameterName[1][0]=='{'){
