@@ -33,6 +33,7 @@ function cargar_apartados(ruta, intentado=0){
                                     console.log("?????")
                                     href_parametros += eval(`${sParameterName[1].substr(1,sParameterName[1].indexOf("}"))}`);
                                 }
+                                console.log("!!!!!!!!!!!!")
                                 href_parametros += '=';
                                 href_parametros += sParameterName[1];
                             } else {
