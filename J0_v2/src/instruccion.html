@@ -6,6 +6,7 @@
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
         <link rel="stylesheet" href="style.css">
+        <script type="text/javascript" src="./src/rutas.js"></script>
     </head>
     <body>
         <nav class="navbar navbar-ligth">
@@ -75,7 +76,7 @@
         }
         
         function setVideo(){
-            fetch("https://github.com/J0nan/asistente_informatico/J0_v2/res/"+titulo+"/"+num_paso_act+".mp4")
+            fetch(URL_GITHUB_PAGES+"/res/"+titulo+"/"+num_paso_act+".mp4")
             .then(response => {
                 if(!response.ok){
                     throw response;
@@ -115,8 +116,8 @@
             .catch(e => {
                 console.error("Error Leyendo pasos "+e);
                 if(intentado == 0){
-                    console.warn("Probando con ruta completa del archivo txt: https://github.com/J0nan/asistente_informatico/J0_v2/res/"+titulo+"/pasos.txt");
-                    leerPasos(encodeURI("https://github.com/J0nan/asistente_informatico/J0_v2/res/"+titulo+"/pasos.txt"),1)
+                    console.warn("Probando con ruta completa del archivo txt: "+URL_GITHUB_PAGES+"/res/"+titulo+"/pasos.txt");
+                    leerPasos(encodeURI(URL_GITHUB_PAGES+"/res/"+titulo+"/pasos.txt"),1)
                 }
             });
         }

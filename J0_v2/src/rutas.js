@@ -1,0 +1,1 @@
+var URL_GITHUB_PAGES = "https://github.com/J0nan/asistente_informatico/J0_v2"

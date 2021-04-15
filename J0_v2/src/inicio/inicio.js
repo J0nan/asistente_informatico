@@ -54,8 +54,8 @@ function cargar_apartados(ruta, intentado=0){
     .catch(e => {
         console.error("Error "+e);
         if( intentado == 0){
-            console.warn("Probando con ruta completa al archivo de contenido: https://github.com/J0nan/asistente_informatico/J0_v2/res/contenido.txt");
-            cargar_apartados('https://github.com/J0nan/asistente_informatico/J0_v2/res/contenido.txt',1)
+            console.warn("Probando con ruta completa al archivo de contenido: "+URL_GITHUB_PAGES+"/res/contenido.txt");
+            cargar_apartados(URL_GITHUB_PAGES+'res/contenido.txt',1)
         }
     });
 }
