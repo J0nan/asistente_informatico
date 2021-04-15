@@ -26,7 +26,7 @@ function cargar_apartados(ruta, intentado=0){
                                 if (i==0) {
                                     href_parametros = sParameterName[0];
                                 } else {
-                                    href_parametros += sURLVariables[i];
+                                    href_parametros += eval(`${sParameterName[1].substr(1,sParameterName[1].indexOf('}'))}`);
                                 }
                                 href_parametros += '=';
                                 href_parametros += sParameterName[1];
