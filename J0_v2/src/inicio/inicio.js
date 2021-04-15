@@ -27,9 +27,9 @@ function cargar_apartados(ruta, intentado=0){
                             if(sParameterName[1][0]=='{'){
                                 console.log(1)
                                 if (i==0) {
+                                    console.log("Esta ??")
                                     href_parametros = sParameterName[0];
                                 } else {
-                                    console.log("Esta aqui?")
                                     href_parametros += eval(`${sParameterName[1].substr(1,sParameterName[1].indexOf('}'))}`);
                                 }
                                 href_parametros += '=';
