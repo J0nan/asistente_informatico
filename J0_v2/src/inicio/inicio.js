@@ -32,6 +32,7 @@ function cargar_apartados(ruta, intentado=0){
                                 } else {
                                     console.log("?????")
                                     let nombre_variable = sParameterName[1].substr(1,sParameterName[1].indexOf('}'))
+                                    console.log("Me cago en todo")
                                     href_parametros += eval(`${nombre_variable}`);
                                     console.log("HOLA")
                                 }
