@@ -2,7 +2,7 @@
 
 ## Fase 2
 
-[Link](https://j0nan.github.io/PAT/Practica3)
+[Link](https://j0nan.github.io/asistente_informatico/)
 
 La web ahora saca el contenido de archivos txt y de la página de Collaborate.
 
