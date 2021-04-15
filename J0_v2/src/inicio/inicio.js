@@ -25,6 +25,7 @@ function cargar_apartados(ruta, intentado=0){
                             console.log(sURLVariables[i])
                             var sParameterName = sURLVariables[i].split('=');
                             if(sParameterName[1][0]=='{'){
+                                console.log(1)
                                 if (i==0) {
                                     href_parametros = sParameterName[0];
                                 } else {
@@ -33,6 +34,7 @@ function cargar_apartados(ruta, intentado=0){
                                 href_parametros += '=';
                                 href_parametros += sParameterName[1];
                             } else {
+                                console.log(2)
                                 if (i==0) {
                                     href_parametros = sURLVariables[i];
                                 } else {
